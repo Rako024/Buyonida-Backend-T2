@@ -1,0 +1,6 @@
+@Buyonida_T2_HostAddress = http://localhost:5095
+
+GET {{Buyonida_T2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

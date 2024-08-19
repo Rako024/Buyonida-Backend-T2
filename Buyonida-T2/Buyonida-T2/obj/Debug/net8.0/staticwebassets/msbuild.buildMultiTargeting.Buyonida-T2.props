@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Buyonida-T2.props" />
+</Project>

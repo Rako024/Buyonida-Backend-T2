@@ -1,0 +1,65 @@
+[
+  {
+    "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/UserAccount/confirmemail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
+    "Method": "LoginAsync",
+    "RelativePath": "api/UserAccount/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Buyonida.Business.DTOs.UserDTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Buyonida.Business.DTOs.UserDTOs.TokenResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
+    "Method": "Register",
+    "RelativePath": "api/UserAccount/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDto",
+        "Type": "Buyonida.Business.DTOs.UserDTOs.InitialRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
