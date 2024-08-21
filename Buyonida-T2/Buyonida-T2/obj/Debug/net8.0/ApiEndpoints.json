@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
+    "Method": "BankDetails",
+    "RelativePath": "api/UserAccount/bank-details",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Buyonida.Business.DTOs.UserDTOs.PersonalBankingInfoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
     "Method": "ConfirmEmail",
     "RelativePath": "api/UserAccount/confirmemail",
     "HttpMethod": "GET",
@@ -45,6 +61,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
+    "Method": "PersonalInfo",
+    "RelativePath": "api/UserAccount/personal-info",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Buyonida.Business.DTOs.UserDTOs.RegisterPersonalInfoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Buyonida_T2.Controllers.UserAccountController",

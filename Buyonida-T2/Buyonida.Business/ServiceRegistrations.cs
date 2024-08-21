@@ -22,6 +22,7 @@ namespace Buyonida.Business
             services.AddScoped<IMailService,MailService>();
             services.AddScoped<IUserService,UserService>();
             services.AddScoped<ITokenService,TokenService>();
+            services.AddScoped<IPersonalService, PersonalService>();
         }
     }
 }

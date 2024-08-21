@@ -12,7 +12,7 @@ namespace Buyonida.Core.Entities
         public string? Name { get; set; } = null;
         public string? Surname { get; set; } = null;
         public string? IDNumber { get; set; } = null;
-        public DateOnly? Birthday { get; set; } = null;
+        public DateTime? Birthday { get; set; } = null;
         public string? MobilNumber { get; set; } = null;
         public string? Adress { get; set; } = null;
         public string? City { get; set; } = null;
