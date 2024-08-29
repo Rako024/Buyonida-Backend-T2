@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Buyonida-T2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e93ed753a254c6efab5d2c5e8a822717f4028cc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ce8bb94eec24d4826774c2fc3b53faaf9ad1e76")]
 [assembly: System.Reflection.AssemblyProductAttribute("Buyonida-T2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Buyonida-T2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

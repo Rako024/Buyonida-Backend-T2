@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida.business\\services\\concretes\\personalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|solutionrelative:buyonida.business\\services\\concretes\\personalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79CB221D-6117-431B-A6E3-9A9852D3AF4C}|Buyonida-T2\\Buyonida-T2.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida-t2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79CB221D-6117-431B-A6E3-9A9852D3AF4C}|Buyonida-T2\\Buyonida-T2.csproj|solutionrelative:buyonida-t2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{79CB221D-6117-431B-A6E3-9A9852D3AF4C}|Buyonida-T2\\Buyonida-T2.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida-t2\\controllers\\useraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79CB221D-6117-431B-A6E3-9A9852D3AF4C}|Buyonida-T2\\Buyonida-T2.csproj|solutionrelative:buyonida-t2\\controllers\\useraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida.business\\dtos\\userdtos\\registerpersonalinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|solutionrelative:buyonida.business\\dtos\\userdtos\\registerpersonalinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79CB221D-6117-431B-A6E3-9A9852D3AF4C}|Buyonida-T2\\Buyonida-T2.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida-t2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{79CB221D-6117-431B-A6E3-9A9852D3AF4C}|Buyonida-T2\\Buyonida-T2.csproj|solutionrelative:buyonida-t2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida.business\\dtos\\userdtos\\personaluserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|solutionrelative:buyonida.business\\dtos\\userdtos\\personaluserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida.business\\dtos\\userdtos\\personalbankinginfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|solutionrelative:buyonida.business\\dtos\\userdtos\\personalbankinginfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida.business\\dtos\\userdtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{888BAFA7-EEBE-4078-B3C9-C4974E79D89B}|Buyonida.Business\\Buyonida.Business.csproj|solutionrelative:buyonida.business\\dtos\\userdtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91CDA187-52C2-4576-BCD7-73785A05F5F7}|Buyonida.Core\\Buyonida.Core.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida.core\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91CDA187-52C2-4576-BCD7-73785A05F5F7}|Buyonida.Core\\Buyonida.Core.csproj|solutionrelative:buyonida.core\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91CDA187-52C2-4576-BCD7-73785A05F5F7}|Buyonida.Core\\Buyonida.Core.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida.core\\entities\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91CDA187-52C2-4576-BCD7-73785A05F5F7}|Buyonida.Core\\Buyonida.Core.csproj|solutionrelative:buyonida.core\\entities\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2CC61FE-97FB-47D6-BF09-CB017E4B3477}|Buyonida.Data\\Buyonida.Data.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida.data\\repositories\\abstracts\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2CC61FE-97FB-47D6-BF09-CB017E4B3477}|Buyonida.Data\\Buyonida.Data.csproj|solutionrelative:buyonida.data\\repositories\\abstracts\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79CB221D-6117-431B-A6E3-9A9852D3AF4C}|Buyonida-T2\\Buyonida-T2.csproj|c:\\users\\rashid\\desktop\\buyonida-backend-t2\\buyonida-t2\\buyonida-t2\\controllers\\sellingdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79CB221D-6117-431B-A6E3-9A9852D3AF4C}|Buyonida-T2\\Buyonida-T2.csproj|solutionrelative:buyonida-t2\\controllers\\sellingdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,118 +38,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\Program.cs",
+              "RelativeDocumentMoniker": "Buyonida-T2\\Program.cs",
+              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\Program.cs",
+              "RelativeToolTip": "Buyonida-T2\\Program.cs",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAUwJIAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T21:26:20.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\appsettings.json",
+              "RelativeDocumentMoniker": "Buyonida-T2\\appsettings.json",
+              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\appsettings.json",
+              "RelativeToolTip": "Buyonida-T2\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-21T21:25:50.814Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "UserAccountController.cs",
               "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\Controllers\\UserAccountController.cs",
               "RelativeDocumentMoniker": "Buyonida-T2\\Controllers\\UserAccountController.cs",
               "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\Controllers\\UserAccountController.cs",
               "RelativeToolTip": "Buyonida-T2\\Controllers\\UserAccountController.cs",
-              "ViewState": "AQIAAAQBAAAAAAAAAADwvxMBAAAJAAAA",
+              "ViewState": "AQIAAKIAAAAAAAAAAADwv+gAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T02:18:31.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PersonalService.cs",
-              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\Services\\Concretes\\PersonalService.cs",
-              "RelativeDocumentMoniker": "Buyonida.Business\\Services\\Concretes\\PersonalService.cs",
-              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\Services\\Concretes\\PersonalService.cs",
-              "RelativeToolTip": "Buyonida.Business\\Services\\Concretes\\PersonalService.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAYwCoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T01:16:23.596Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Personal.cs",
-              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Core\\Entities\\Personal.cs",
-              "RelativeDocumentMoniker": "Buyonida.Core\\Entities\\Personal.cs",
-              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Core\\Entities\\Personal.cs",
-              "RelativeToolTip": "Buyonida.Core\\Entities\\Personal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:43:45.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Core\\Entities\\AppUser.cs",
-              "RelativeDocumentMoniker": "Buyonida.Core\\Entities\\AppUser.cs",
-              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Core\\Entities\\AppUser.cs",
-              "RelativeToolTip": "Buyonida.Core\\Entities\\AppUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:43:07.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T21:04:40.657Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PersonalUserDto.cs",
-              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\DTOs\\UserDTOs\\PersonalUserDto.cs",
-              "RelativeDocumentMoniker": "Buyonida.Business\\DTOs\\UserDTOs\\PersonalUserDto.cs",
-              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\DTOs\\UserDTOs\\PersonalUserDto.cs",
-              "RelativeToolTip": "Buyonida.Business\\DTOs\\UserDTOs\\PersonalUserDto.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAAAXAAAA",
+              "Title": "SellingDataController.cs",
+              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\Controllers\\SellingDataController.cs",
+              "RelativeDocumentMoniker": "Buyonida-T2\\Controllers\\SellingDataController.cs",
+              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\Controllers\\SellingDataController.cs",
+              "RelativeToolTip": "Buyonida-T2\\Controllers\\SellingDataController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:42:37.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Data\\Repositories\\Abstracts\\IRepository.cs",
-              "RelativeDocumentMoniker": "Buyonida.Data\\Repositories\\Abstracts\\IRepository.cs",
-              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Data\\Repositories\\Abstracts\\IRepository.cs",
-              "RelativeToolTip": "Buyonida.Data\\Repositories\\Abstracts\\IRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:40:10.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PersonalBankingInfoDto.cs",
-              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\DTOs\\UserDTOs\\PersonalBankingInfoDto.cs",
-              "RelativeDocumentMoniker": "Buyonida.Business\\DTOs\\UserDTOs\\PersonalBankingInfoDto.cs",
-              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\DTOs\\UserDTOs\\PersonalBankingInfoDto.cs",
-              "RelativeToolTip": "Buyonida.Business\\DTOs\\UserDTOs\\PersonalBankingInfoDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:35:57.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\DTOs\\UserDTOs\\LoginDto.cs",
-              "RelativeDocumentMoniker": "Buyonida.Business\\DTOs\\UserDTOs\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\DTOs\\UserDTOs\\LoginDto.cs",
-              "RelativeToolTip": "Buyonida.Business\\DTOs\\UserDTOs\\LoginDto.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:29:03.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterPersonalInfoDto.cs",
-              "DocumentMoniker": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\DTOs\\UserDTOs\\RegisterPersonalInfoDto.cs",
-              "RelativeDocumentMoniker": "Buyonida.Business\\DTOs\\UserDTOs\\RegisterPersonalInfoDto.cs",
-              "ToolTip": "C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida.Business\\DTOs\\UserDTOs\\RegisterPersonalInfoDto.cs",
-              "RelativeToolTip": "Buyonida.Business\\DTOs\\UserDTOs\\RegisterPersonalInfoDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:27:17.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T21:04:39.988Z"
             }
           ]
         }

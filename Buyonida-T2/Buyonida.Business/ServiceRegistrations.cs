@@ -23,6 +23,12 @@ namespace Buyonida.Business
             services.AddScoped<IUserService,UserService>();
             services.AddScoped<ITokenService,TokenService>();
             services.AddScoped<IPersonalService, PersonalService>();
+            services.AddScoped<IInvidualService, InvidualService>();
+            services.AddScoped<IJuridicalService, JuridicalService>();
+            services.AddScoped<ISellingTypeRepository, SellingTypeRepository>();
+            services.AddScoped<ISellingPointRepository, SellingPointRepository>();
+            services.AddScoped<ISellingPointService, SellingPointService>();
+            services.AddScoped<ISellingTypeService, SellingTypeService>();
         }
     }
 }

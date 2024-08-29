@@ -52,9 +52,9 @@ namespace Buyonida.Data.Repositories.Concretes
             IQueryable<T> query = Table;
             if (!EnableTraking) query = query.AsNoTracking();
             if (include is not null) query = include(query);
-            query.Where(func);
+            
 
-            return await query.FirstOrDefaultAsync();
+            return await query.Where(func).FirstOrDefaultAsync();
         }
 
         public Task<int> GetCountAsync(Expression<Func<T, bool>>? func = null)

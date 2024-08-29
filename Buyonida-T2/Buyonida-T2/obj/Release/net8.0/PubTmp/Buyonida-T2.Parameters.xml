@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="residbabazada-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="Buyonida.Data.DAL.BuyonidaContext" description="" value="Data Source=SQL8020.site4now.net;Initial Catalog=db_aac527_buyonida;User Id=db_aac527_buyonida_admin;Password=!2627251Rr" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Rashid\\Desktop\\Buyonida-Backend-T2\\Buyonida-T2\\Buyonida-T2\\obj\\Release\\net8\.0\\PubTmp\\EFSQLScripts\\Buyonida\.Data\.DAL\.BuyonidaContext\.sql$" />
+  </parameter>
+</parameters>

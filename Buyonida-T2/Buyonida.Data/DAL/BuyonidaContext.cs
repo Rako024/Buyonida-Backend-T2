@@ -19,6 +19,8 @@ namespace Buyonida.Data.DAL
         public DbSet<Personal> Personals { get; set; }
         public DbSet<Invidual> Inviduals { get; set; }
         public DbSet<Juridical> Juridicals { get; set; }
+        public DbSet<SellingPoint> SellingPoints { get; set; }
+        public DbSet<SellingType> SellingTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

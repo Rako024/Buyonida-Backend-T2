@@ -2,10 +2,12 @@
 using Buyonida.Business.Exceptions;
 using Buyonida.Business.Services.Abstracts;
 using Buyonida.Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Buyonida_T2.Controllers;
 
@@ -19,8 +21,10 @@ public class UserAccountController : ControllerBase
     private readonly IMailService _mailService;
     private readonly ITokenService _tokenService;
     private readonly IPersonalService _personalService;
+    private readonly IInvidualService _invidualService;
+    private readonly IJuridicalService _juridicalService;
 
-    public UserAccountController(IUserService userService, ILogger<UserAccountController> logger, UserManager<AppUser> userManager, IMailService mailService, ITokenService tokenService, IPersonalService personalService)
+    public UserAccountController(IUserService userService, ILogger<UserAccountController> logger, UserManager<AppUser> userManager, IMailService mailService, ITokenService tokenService, IPersonalService personalService, IInvidualService invidualService, IJuridicalService juridicalService)
     {
         _userService = userService;
         _logger = logger;
@@ -28,6 +32,8 @@ public class UserAccountController : ControllerBase
         _mailService = mailService;
         _tokenService = tokenService;
         _personalService = personalService;
+        _invidualService = invidualService;
+        _juridicalService = juridicalService;
     }
 
     [HttpPost("register")]
@@ -38,7 +44,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Error = "Invalid input data"
+                Message = "Invalid input data"
             });
         }
         
@@ -53,7 +59,7 @@ public class UserAccountController : ControllerBase
                 return BadRequest(new
                 {
                     StatusCode = StatusCodes.Status400BadRequest,
-                    Error = "User registration failed."
+                    Message = "User registration failed."
                 });
             }
             //var roleResult = await _userManager.AddToRoleAsync(user, "User");
@@ -85,7 +91,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Error = ex.Message
+                Message = ex.Message
             });
         }
         catch (Exception ex)
@@ -94,7 +100,7 @@ public class UserAccountController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new
             {
                 StatusCode = StatusCodes.Status500InternalServerError,
-                Error = "An unexpected error occurred. Please try again later."
+                Message = "An unexpected error occurred. Please try again later."
             });
         }
     }
@@ -114,6 +120,8 @@ public class UserAccountController : ControllerBase
                 Error = "Invalid token or user ID."
             });
         }
+
+        
 
         try
         {
@@ -200,6 +208,7 @@ public class UserAccountController : ControllerBase
 
 
     [HttpPost("personal-info")]
+    [Authorize]
     public async Task<IActionResult> PersonalInfo(RegisterPersonalInfoDto dto)
     {
         var user = await _userManager.FindByIdAsync(dto.UserId);
@@ -208,7 +217,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Error = "User Not Found!"
+                Message = "User Not Found!"
             });
         }
         if (!user.EmailConfirmed)
@@ -216,7 +225,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Error = "User Emain not Confirmed!"
+                Message = "User Emain not Confirmed!"
             });
         }
         switch(dto.PersonalType)
@@ -231,15 +240,50 @@ public class UserAccountController : ControllerBase
                     return BadRequest(new
                     {
                         StatusCode = StatusCodes.Status400BadRequest,
-                        Error = ex.Message,
+                        Message = ex.Message,
                         ErrorType = "Service Error"
                     });
                 }
                 break;
             case "Individual":
+                try
+                {
+                    await _invidualService.CreateInvidualUserAsync(dto);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "An error occurred while registering the user");
+                    return BadRequest(new
+                    {
+                        StatusCode = StatusCodes.Status400BadRequest,
+                        Message = ex.Message,
+                        ErrorType = "Service Error"
+                    });
+                }
                 break;
             case "Juridical person":
+                try
+                {
+                    await _juridicalService.CreateJuridicalUserAsync(dto);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "An error occurred while registering the user");
+                    return BadRequest(new
+                    {
+                        StatusCode = StatusCodes.Status400BadRequest,
+                        Message = ex.Message,
+                        ErrorType = "Service Error"
+                    });
+                }
                 break;
+            default:
+                return BadRequest(new
+                {
+                    StatusCode = StatusCodes.Status400BadRequest,
+                    Message = "User Type is not valid",
+                    ErrorType = ""
+                });
         }
 
         return Ok(new
@@ -251,6 +295,7 @@ public class UserAccountController : ControllerBase
 
 
     [HttpPost("bank-details")]
+    [Authorize]
     public async Task<IActionResult> BankDetails(PersonalBankingInfoDto dto)
     {
         var user = await _userManager.FindByIdAsync(dto.UserId);
@@ -259,16 +304,31 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Error = "User Not Found!"
+                Message = "User Not Found!"
             });
         }
-        var personalDto = await _personalService.GetPersonalUserByIdAsync(dto.UserId);
+        PersonalUserDto personalDto;
+        try
+        {
+
+        personalDto = await _personalService.GetPersonalUserByIdAsync(dto.UserId);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = "User invalid Type",
+                
+            });
+        }
+
         if (personalDto is null)
         {
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Error = "User Type is not Personal!"
+                Message = "User Type is not Personal!"
             });
         }
 
@@ -281,7 +341,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                message = ex.Message,
+                Message = ex.Message,
                 
             });
         }
@@ -289,6 +349,150 @@ public class UserAccountController : ControllerBase
         return Ok(new
         {
             StatusCode = StatusCodes.Status200OK
+        });
+    }
+
+
+    [HttpPost("bank-det-inv")]
+    [Authorize]
+    public async Task<IActionResult> InvidualBankDetails(InvidualBankingInfoDto dto)
+    {
+        var user = await _userManager.FindByIdAsync(dto.UserId);
+        if (user is null)
+        {
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = "User Not Found!"
+            });
+        }
+        InvidualUserDto invidualDto;
+        try
+        {
+         invidualDto = await _invidualService.GetInvidualUserByIdAsync(dto.UserId);
+
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = "User invalid Type",
+                
+            });
+        }
+
+
+        if (invidualDto is null)
+        {
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = "User is not found!"
+            });
+        }
+        
+
+        try
+        {
+            await _invidualService.AddBankingInfoInvidualUserAsync(dto);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while registering Bank details");
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = ex.Message,
+
+            });
+        }
+
+        return Ok(new
+        {
+            StatusCode = StatusCodes.Status200OK
+        });
+    }
+
+    [HttpPost("bank-det-leg")]
+    [Authorize]
+    public async Task<IActionResult> JuridicalBankDetails(JuridicalBankingInfoDto dto)
+    {
+        var user = await _userManager.FindByIdAsync(dto.UserId);
+        if (user is null)
+        {
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = "User Not Found!"
+            });
+        }
+        JuridicalUserDto juridicalDto;
+        try
+        {
+            juridicalDto = await _juridicalService.GetJuridicalUserByIdAsync(dto.UserId);
+
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = "User invalid Type",
+                
+            });
+        }
+
+
+        if (juridicalDto is null)
+        {
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = "User is not found!"
+            });
+        }
+
+
+        try
+        {
+            await _juridicalService.AddBankingInfoJuridicalUserAsync(dto);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while registering Bank details");
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                message = ex.Message,
+
+            });
+        }
+
+        return Ok(new
+        {
+            StatusCode = StatusCodes.Status200OK
+        });
+    }
+
+
+    [HttpGet("user-data")]
+    [Authorize]
+    public async Task<IActionResult> GetUserData()
+    {
+        var user = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if(user is null)
+        {
+            return BadRequest(new
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                Message = "User is not Authorize!"
+            });
+        }
+        return Ok(new
+        {
+            StatusCode = StatusCodes.Status200OK,
+            Data = user
         });
     }
 }

@@ -1,0 +1,13 @@
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\bin\Release\net8.0\Buyonida.Core.deps.json
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\bin\Release\net8.0\Buyonida.Core.dll
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\bin\Release\net8.0\Buyonida.Core.pdb
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\Buyonida.Core.csproj.AssemblyReference.cache
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\Buyonida.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\Buyonida.Core.AssemblyInfoInputs.cache
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\Buyonida.Core.AssemblyInfo.cs
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\Buyonida.Core.csproj.CoreCompileInputs.cache
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\Buyonida.Core.sourcelink.json
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\Buyonida.Core.dll
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\refint\Buyonida.Core.dll
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\Buyonida.Core.pdb
+C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida.Core\obj\Release\net8.0\ref\Buyonida.Core.dll

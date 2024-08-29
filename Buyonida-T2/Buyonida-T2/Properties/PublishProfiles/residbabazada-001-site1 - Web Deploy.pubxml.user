@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA89jz4IKa5UCDMdR7AQ/Y1AAAAAACAAAAAAAQZgAAAAEAACAAAABeSBEWVQ4jddj/ajOVdDi+SiAuz5R/LRlJAMqiaKGvdgAAAAAOgAAAAAIAACAAAAACuq9mfdH0YMuFruAHbc+6E+Viq9daSRiuDfOJWK0SQyAAAACxZjA+V9pMoqS3h5RQJ0hXcVBHPqfBAxqHRyKRywqYZkAAAAAPMK1u+3sOuspQMAUJ+TEkkKVp8vuJ3EEW+pcnUPOSUyVi1wT67jvYFUkraZbOFxamA9QoXPFGa3jGJdhT9QNs</EncryptedPassword>
+    <History>True|2024-08-29T14:50:53.6761743Z;True|2024-08-29T18:49:22.0581635+04:00;True|2024-08-29T18:45:00.8000987+04:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Server">
+      <Value>Data Source=SQL8020.site4now.net%3bInitial Catalog=db_aac527_buyonida%3bUser Id=db_aac527_buyonida_admin%3bPassword=!2627251Rr</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Buyonida.Data.DAL.BuyonidaContext">
+      <Value>Data Source=SQL8020.site4now.net%3bInitial Catalog=db_aac527_buyonida%3bUser Id=db_aac527_buyonida_admin%3bPassword=!2627251Rr</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

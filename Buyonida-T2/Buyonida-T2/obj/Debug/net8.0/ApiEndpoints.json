@@ -1,5 +1,69 @@
 [
   {
+    "ContainingType": "Buyonida_T2.Controllers.SellingDataController",
+    "Method": "SellingPoint",
+    "RelativePath": "api/SellingData/selling-points",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Buyonida.Business.DTOs.DataDtos.SellingPointDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Buyonida_T2.Controllers.SellingDataController",
+    "Method": "SellingType",
+    "RelativePath": "api/SellingData/what-you-sell",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Buyonida.Business.DTOs.DataDtos.SellingTypeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
+    "Method": "InvidualBankDetails",
+    "RelativePath": "api/UserAccount/bank-det-inv",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Buyonida.Business.DTOs.UserDTOs.InvidualBankingInfoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
+    "Method": "JuridicalBankDetails",
+    "RelativePath": "api/UserAccount/bank-det-leg",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Buyonida.Business.DTOs.UserDTOs.JuridicalBankingInfoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
     "Method": "BankDetails",
     "RelativePath": "api/UserAccount/bank-details",
@@ -92,6 +156,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Buyonida_T2.Controllers.UserAccountController",
+    "Method": "GetUserData",
+    "RelativePath": "api/UserAccount/user-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

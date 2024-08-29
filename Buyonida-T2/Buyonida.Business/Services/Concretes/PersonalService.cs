@@ -80,24 +80,52 @@ namespace Buyonida.Business.Services.Concretes
             await _personalRepository.CommitAsync();
         }
 
-        public Task DeletePersonalUserAsync(string userId)
+        public async Task DeletePersonalUserAsync(string userId)
         {
-            throw new NotImplementedException();
+            var pesonal = await _personalRepository.GetAsync(x => x.Id == userId, null, true);
+            if (pesonal == null)
+            {
+                throw new GlobalAppException("Personal is not found!");
+            }
+
+            pesonal.IsDeleted = true;
+            pesonal.Email = null;
+            pesonal.NormalizedEmail = null;
+            await _personalRepository.CommitAsync();
         }
 
-        public Task<List<PersonalUserDto>> GetAllPersonalUsersAsync(Expression<Func<Personal, bool>>? func = null, Func<IQueryable<Personal>, IIncludableQueryable<Personal, object>>? include = null, Func<IQueryable<Personal>, IOrderedQueryable<Personal>>? orderBy = null, bool EnableTraking = false)
+        public async Task<List<PersonalUserDto>> GetAllPersonalUsersAsync(Expression<Func<Personal, bool>>? func = null, Func<IQueryable<Personal>, IIncludableQueryable<Personal, object>>? include = null, Func<IQueryable<Personal>, IOrderedQueryable<Personal>>? orderBy = null, bool EnableTraking = false)
         {
-            throw new NotImplementedException();
+            IList<Personal> personals = await _personalRepository.GetAllAsync(func, include, orderBy, EnableTraking);
+            List<PersonalUserDto> dtos = new List<PersonalUserDto>();
+            foreach (var personal in personals)
+            {
+                PersonalUserDto dto = _mapper.Map<PersonalUserDto>(personal);
+                dtos.Add(dto);
+            }
+            return dtos;
         }
 
-        public Task<PersonalUserDto> GetPersonalUserAsync(Expression<Func<Personal, bool>> func, Func<IQueryable<Personal>, IIncludableQueryable<Personal, object>>? include = null, bool EnableTraking = true)
+        public async Task<PersonalUserDto> GetPersonalUserAsync(Expression<Func<Personal, bool>> func, Func<IQueryable<Personal>, IIncludableQueryable<Personal, object>>? include = null, bool EnableTraking = true)
         {
-            throw new NotImplementedException();
+            Personal personal = await _personalRepository.GetAsync(func, include, EnableTraking);
+            if (personal == null)
+            {
+                throw new GlobalAppException("Personal is not found");
+            }
+            PersonalUserDto dto = _mapper.Map<PersonalUserDto>(personal);
+            return dto;
         }
 
-        public Task<PersonalUserDto> GetPersonalUserByEmailAsync(string email)
+        public async Task<PersonalUserDto> GetPersonalUserByEmailAsync(string email)
         {
-            throw new NotImplementedException();
+            Personal personal = await _personalRepository.GetAsync(x=>x.Email == email);
+            if(personal == null)
+            {
+                throw new GlobalAppException("Personal is not found");
+            }
+            PersonalUserDto dto = _mapper.Map<PersonalUserDto>(personal);
+            return dto;
         }
 
         public async Task<PersonalUserDto> GetPersonalUserByIdAsync(string userId)
@@ -105,9 +133,18 @@ namespace Buyonida.Business.Services.Concretes
             var personal = await _personalRepository.GetAsync(x=>x.Id == userId,null,true);
             if (personal == null)
             {
-                throw new GlobalAppException("User not Found!");
+                throw new GlobalAppException("Personal not Found!");
             }
-            PersonalUserDto person = _mapper.Map<PersonalUserDto>(personal);
+            PersonalUserDto person;
+            try
+            {
+
+                    person = _mapper.Map<PersonalUserDto>(personal);
+            }
+            catch (Exception ex)
+            {
+                throw new GlobalAppException("Cannot mapping");
+            }
             return person;
         }
     }

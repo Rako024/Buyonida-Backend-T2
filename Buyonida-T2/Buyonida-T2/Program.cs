@@ -41,7 +41,7 @@ namespace Buyonida_T2
 
             builder.Services.AddDbContext<BuyonidaContext>(opt =>
             {
-                opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("Server"));
             });
 
 
@@ -92,10 +92,9 @@ namespace Buyonida_T2
             {
                 options.TokenLifespan = TimeSpan.FromHours(24);
             });
-            builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
-            {
-                builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-            }));
+
+           
+
             builder.Services.AddSwaggerGen(opt =>
             {
                 opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
@@ -126,19 +125,27 @@ namespace Buyonida_T2
                     });
                             });
 
+            builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+            {
+                builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+            }));
+
+
             builder.Services.AddServices(builder.Configuration);
             builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
             builder.Services.AddAutoMapper(typeof(UserMapProfilies));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
+            
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
+            
             app.UseMiddleware<GlobalExceptionMiddleware>();
             app.UseHttpsRedirection();
+
+            app.UseCors("corsapp");
+
             app.UseAuthentication();
             app.UseAuthorization();
 

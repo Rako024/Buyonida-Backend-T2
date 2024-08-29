@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida-T2\obj\Release\net8.0\PubTmp\Out\" />
+  <dbfullsql path="C:\Users\Rashid\Desktop\Buyonida-Backend-T2\Buyonida-T2\Buyonida-T2\obj\Release\net8.0\PubTmp\EFSQLScripts\Buyonida.Data.DAL.BuyonidaContext.sql" />
+</sitemanifest>
