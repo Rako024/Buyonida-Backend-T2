@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Claims;
 
 namespace Buyonida_T2.Controllers;
@@ -44,10 +45,14 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "Invalid input data"
+                Error = "Invalid input data"
             });
         }
-        
+        var user1 = await _userManager.FindByEmailAsync(registerDto.Email);
+        if(user1 is not null)
+        {
+            throw new GlobalAppException("Email is already in use.");
+        }
         try
         {
             await _userService.Register(registerDto);
@@ -59,7 +64,7 @@ public class UserAccountController : ControllerBase
                 return BadRequest(new
                 {
                     StatusCode = StatusCodes.Status400BadRequest,
-                    Message = "User registration failed."
+                    Error = "User registration failed."
                 });
             }
             //var roleResult = await _userManager.AddToRoleAsync(user, "User");
@@ -91,7 +96,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = ex.Message
+                Error = ex.Message
             });
         }
         catch (Exception ex)
@@ -100,7 +105,7 @@ public class UserAccountController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new
             {
                 StatusCode = StatusCodes.Status500InternalServerError,
-                Message = "An unexpected error occurred. Please try again later."
+                Error = "An unexpected error occurred. Please try again later."
             });
         }
     }
@@ -135,12 +140,12 @@ public class UserAccountController : ControllerBase
                     Error = "Invalid token or user ID."
                 });
             }
-
+            
             var result = await _userManager.ConfirmEmailAsync(user, token);
             if (result.Succeeded)
             {
                 _logger.LogInformation($"Email confirmed successfully for userId: {userId}");
-                return Redirect("https://frontend-final-navy.vercel.app/email-verify");
+                return Redirect("https://buyonida-front-end.vercel.app/login"); // buramı domeinde dəyiş
             }
             else
             {
@@ -175,6 +180,7 @@ public class UserAccountController : ControllerBase
 
             if (user == null)
             {
+                
                 throw new GlobalAppException("User not found with the provided username or email.");
             }
 
@@ -217,7 +223,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User Not Found!"
+                Error = "User Not Found!"
             });
         }
         if (!user.EmailConfirmed)
@@ -225,7 +231,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User Emain not Confirmed!"
+                Error = "User Emain not Confirmed!"
             });
         }
         switch(dto.PersonalType)
@@ -240,7 +246,7 @@ public class UserAccountController : ControllerBase
                     return BadRequest(new
                     {
                         StatusCode = StatusCodes.Status400BadRequest,
-                        Message = ex.Message,
+                        Error = ex.Message,
                         ErrorType = "Service Error"
                     });
                 }
@@ -256,7 +262,7 @@ public class UserAccountController : ControllerBase
                     return BadRequest(new
                     {
                         StatusCode = StatusCodes.Status400BadRequest,
-                        Message = ex.Message,
+                        Error = ex.Message,
                         ErrorType = "Service Error"
                     });
                 }
@@ -272,7 +278,7 @@ public class UserAccountController : ControllerBase
                     return BadRequest(new
                     {
                         StatusCode = StatusCodes.Status400BadRequest,
-                        Message = ex.Message,
+                        Error = ex.Message,
                         ErrorType = "Service Error"
                     });
                 }
@@ -281,7 +287,7 @@ public class UserAccountController : ControllerBase
                 return BadRequest(new
                 {
                     StatusCode = StatusCodes.Status400BadRequest,
-                    Message = "User Type is not valid",
+                    Error = "User Type is not valid",
                     ErrorType = ""
                 });
         }
@@ -304,7 +310,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User Not Found!"
+                Error = "User Not Found!"
             });
         }
         PersonalUserDto personalDto;
@@ -318,7 +324,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User invalid Type",
+                Error = "User invalid Type",
                 
             });
         }
@@ -328,7 +334,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User Type is not Personal!"
+                Error = "User Type is not Personal!"
             });
         }
 
@@ -341,7 +347,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = ex.Message,
+                Error = ex.Message
                 
             });
         }
@@ -363,7 +369,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User Not Found!"
+                Error = "User Not Found!"
             });
         }
         InvidualUserDto invidualDto;
@@ -377,7 +383,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User invalid Type",
+                Error = "User invalid Type",
                 
             });
         }
@@ -388,7 +394,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User is not found!"
+                Error = "User is not found!"
             });
         }
         
@@ -403,7 +409,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = ex.Message,
+                Error = ex.Message
 
             });
         }
@@ -424,7 +430,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User Not Found!"
+                Error = "User Not Found!"
             });
         }
         JuridicalUserDto juridicalDto;
@@ -438,7 +444,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User invalid Type",
+                Error = "User invalid Type",
                 
             });
         }
@@ -449,7 +455,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User is not found!"
+                Error = "User is not found!"
             });
         }
 
@@ -464,7 +470,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                message = ex.Message,
+                Error = ex.Message
 
             });
         }
@@ -486,7 +492,7 @@ public class UserAccountController : ControllerBase
             return BadRequest(new
             {
                 StatusCode = StatusCodes.Status400BadRequest,
-                Message = "User is not Authorize!"
+                Error = "User is not Authorize!"
             });
         }
         return Ok(new

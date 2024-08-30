@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Buyonida.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ce8bb94eec24d4826774c2fc3b53faaf9ad1e76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95dd891d161a7b9bd7bae56552d3f1087a330f44")]
 [assembly: System.Reflection.AssemblyProductAttribute("Buyonida.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Buyonida.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

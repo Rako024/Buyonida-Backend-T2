@@ -5,6 +5,7 @@ using Buyonida.Business.Exceptions;
 using Buyonida.Business.Profilies;
 using Buyonida.Core.Entities;
 using Buyonida.Data.DAL;
+using Buyonida_T2.Filters;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -13,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+
 
 namespace Buyonida_T2
 {
@@ -63,10 +65,13 @@ namespace Buyonida_T2
                         Error = errors
                     };
 
-                    return new BadRequestObjectResult(errorResponse);
+                    return new JsonResult(errorResponse);
                 };
             });
-
+            //builder.Services.AddControllers(config =>
+            //{
+            //    config.Filters.Add<CustomValidationFilter>();
+            //});
 
             builder.Services.AddAuthentication(opt =>
             {

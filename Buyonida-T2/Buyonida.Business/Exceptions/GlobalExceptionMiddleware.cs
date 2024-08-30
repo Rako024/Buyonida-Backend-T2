@@ -45,8 +45,8 @@ namespace Buyonida.Business.Exceptions
 
             return context.Response.WriteAsync(new ErrorDetails()
             {
-                StatusCode = context.Response.StatusCode,
-                Error = exception.Message,
+                statusCode = context.Response.StatusCode,
+                error = exception.Message,
 
             }.ToString());
         }
@@ -58,8 +58,8 @@ namespace Buyonida.Business.Exceptions
 
             return context.Response.WriteAsync(new ErrorDetails()
             {
-                StatusCode = context.Response.StatusCode,
-                Error = "Internal Server Error from the custom middleware."
+                statusCode = context.Response.StatusCode,
+                error = "Internal Server Error from the custom middleware."
             }.ToString());
         }
     }

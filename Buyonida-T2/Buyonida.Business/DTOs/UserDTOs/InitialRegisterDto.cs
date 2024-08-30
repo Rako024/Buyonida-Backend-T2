@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,6 +13,7 @@ namespace Buyonida.Business.DTOs.UserDTOs
     {
         public string Email { get; set; }
         public string Password { get; set; }
+        [Compare("Password")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -30,7 +32,7 @@ namespace Buyonida.Business.DTOs.UserDTOs
             .WithMessage("The password cannot be empty!")
             .Must(r =>
             {
-                Regex passwordRegex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{6,}$");
+                Regex passwordRegex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,50}$");
                 Match match = passwordRegex.Match(r);
                 return match.Success;
             }).WithMessage("Password format is not correct!")

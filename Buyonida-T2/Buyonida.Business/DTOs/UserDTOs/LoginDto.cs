@@ -17,9 +17,9 @@ namespace Buyonida.Business.DTOs.UserDTOs
         public LoginDtoValidation()
         {
             RuleFor(x => x.UserNameOrEmail).NotEmpty()
-              .WithMessage("The UserName/Email cannot be empty!");
+              .WithMessage("The Username/Email cannot be empty!");
             RuleFor(x => x.Password).NotEmpty()
-                .WithMessage("The UserName/Email cannot be empty!");
+                .WithMessage("Password cannot be empty!");
         }
     }
 }

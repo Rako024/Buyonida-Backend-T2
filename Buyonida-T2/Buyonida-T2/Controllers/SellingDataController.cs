@@ -28,7 +28,7 @@ namespace Buyonida_T2.Controllers
                 return BadRequest(new
                 {
                     StatusCode = StatusCodes.Status400BadRequest,
-                    Message = ex.Message
+                    Error = ex.Message
                 });
             }
             return Ok(new
@@ -50,7 +50,7 @@ namespace Buyonida_T2.Controllers
                 return BadRequest(new
                 {
                     StatusCode = StatusCodes.Status400BadRequest,
-                    Message = ex.Message
+                    Error = ex.Message
                 });
             }
             return Ok(new
